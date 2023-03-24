@@ -7,7 +7,6 @@ int task1() {
     string1 = (char *) malloc(1);
     char *string2;
     string2 = (char *) malloc(1);
-    int amount = 0;
     char input;  // переменная для считывания посимвольно
     char lower_value = 0, upper_value = 0; // переменные "от", "до"
     puts("Input string.");
