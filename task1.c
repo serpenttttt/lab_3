@@ -4,12 +4,12 @@
 
 int task1() {
     char *string1; // указатель на динамический массив
-    string1 = (char *) malloc(1);
+    string1 = (char *) malloc(sizeof(char) * 1);
     char *string2;
-    string2 = (char *) malloc(1);
+    string2 = (char *) malloc(sizeof(char) * 1);
     char input;  // переменная для считывания посимвольно
     char lower_value = 0, upper_value = 0; // переменные "от", "до"
-    puts("Input string.");
+    puts("Input string. (such as 'a-z')");
     int i = 0;
     while ((input = getchar()) != '\n') { // ввод s1
         string1 = (char *) realloc(string1, i + 1);

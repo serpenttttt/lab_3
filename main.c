@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include "lab3.h"
 
-
 int main() {
     puts("Task1");
     task1();
