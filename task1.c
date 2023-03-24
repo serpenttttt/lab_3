@@ -11,7 +11,6 @@ int task1() {
     char lower_value = 0, upper_value = 0; // переменные "от", "до"
     puts("Input string.");
     int i = 0;
-    getchar();
     while ((input = getchar()) != '\n') { // ввод s1
         string1 = (char *) realloc(string1, i + 1);
         string1[i] = input;
