@@ -38,11 +38,13 @@ int task2() {
     puts("Input s1.");
     while ((input = getchar()) != '\n' && i < 100) { // ввод s1
         s1[i++] = input;
+        s1[i] = '\0';
     }
     i = 0;
     puts("Input  s2.");
     while ((input = getchar()) != '\n') { // ввод s2
         s2[i++] = input;
+        s2[i] = '\0';
     }
     for (i = 0; s2[i] != '\0'; ++i) {
         for (int j = 0; s1[j] != '\0'; ++j) {
