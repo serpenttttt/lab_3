@@ -17,16 +17,13 @@ void insert_string(char *string) {
     }
 }
 
-void delete_s2_from_s1(int buffer, int length_s2, char *s1, int j) {
-    // передвигаем на места символов s2 в s1 следующие за ними значения
-    for (int l = 0; l < length_s2; ++l) {
-        s1[j] = s1[j+length_s2];
-        --j;
+void delete_s2_from_s1(int length_s2, char *s1, int j) {
+    // передвигаем значения на длину s2
+    int l;
+    for (l = j - length_s2 + 1; s1[l+length_s2] != '\0'; ++l) {
+        s1[l] = s1[l+length_s2];
     }
-    // передвигаем оставшиеся символы
-    for (int i = buffer; s1[i] != '\0'; ++i) {
-        s1[i] = s1[i+length_s2];
-    }
+    s1[l] = '\0';
 }
 
 int task2() {
@@ -44,7 +41,6 @@ int task2() {
         length_s2 = i + 1;
 
     int k = 0; // сколько символов подряд совпало с s2
-    int buffer;
     for(int j = 0; s1[j] != '\0'; ++j) {
         // перебираем строку s1
         if (s1[j] != s2[k]) {
@@ -53,9 +49,9 @@ int task2() {
         }
         ++k;
         if (k == length_s2) {
-            buffer = j;
-            delete_s2_from_s1(buffer, length_s2, s1, j);
+            delete_s2_from_s1(length_s2, s1, j);
             k = 0;
+            j = j - length_s2;
         }
     }
 
