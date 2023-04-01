@@ -43,11 +43,12 @@ int task2() {
     for(int i = 0; s2[i] != '\0'; ++i)
         length_s2 = i + 1;
 
-    int k = 0;
+    int k = 0; // сколько символов подряд совпало с s2
     int buffer;
     for(int j = 0; s1[j] != '\0'; ++j) {
         // перебираем строку s1
         if (s1[j] != s2[k]) {
+            k = 0;
             continue;
         }
         ++k;
